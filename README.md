@@ -91,9 +91,6 @@ V
 | **PROCUREMENT OFFICER** | `tankiso@gmail.com` | Ministry of Public Works |
 | **EVALUATOR** | `sechaba@gmail.com` | ICT Directorate |
 | **EVALUATOR** | `kabelo@gmail.com` (Note: same email, different role & ID) | ICT Directorate |
-| **SUPPLIER** | `kabelo@gmail.com` | Maseru Construction Pty Ltd |
-| **SUPPLIER** | `rorisang@gmail.com` | Lesotho Electrical Works |
-| **SUPPLIER** | `admin@gmail.com` | Highlands Plumbing Services |
 
 > **Permissions:**
 > - **Procurement Officer:** Create, publish, close tenders, manage awards.
