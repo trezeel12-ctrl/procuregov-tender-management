@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/procuregov">
+  <Manager pathname=""/>
+  <Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" maxIdle="10" maxTotal="20" maxWaitMillis="10000" name="jdbc/ProcureGovDB" password="" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/karabelomolefe2333937?useSSL=false&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true" username="root"/>
+  <!-- Email Configuration (Optional - can also be hardcoded in EmailService) -->
+  <Parameter name="mail.smtp.host" override="false" value="smtp.gmail.com"/>
+  <Parameter name="mail.smtp.port" override="false" value="587"/>
+  <Parameter name="mail.username" override="false" value="noreply@procuregov.ls"/>
+  <Parameter name="mail.password" override="false" value="your_app_password_here"/>
+  <!-- Upload Base Path -->
+  <Parameter name="upload.base.path" override="false" value="C:/Users/Karabelo Molefe/Documents/NetBeansProjects/KarabeloMolefe2333937/uploads"/>
+</Context>

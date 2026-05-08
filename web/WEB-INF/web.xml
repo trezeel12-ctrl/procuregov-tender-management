@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee 
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <!-- ================= PROJECT INFO ================= -->
+    <display-name>ProcureGov - KarabeloMolefe2333937</display-name>
+
+    <!-- ================= CONTEXT PARAM ================= -->
+    <context-param>
+        <param-name>upload.base.path</param-name>
+        <param-value>C:/Users/Karabelo Molefe/Documents/NetBeansProjects/KarabeloMolefe2333937/uploads</param-value>
+    </context-param>
+
+    <!-- ================= SESSION ================= -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+    <!-- ================= DATABASE ================= -->
+    <resource-ref>
+        <res-ref-name>jdbc/ProcureGovDB</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+
+    <!-- ================= AUTH ================= -->
+    <servlet>
+        <servlet-name>AuthServlet</servlet-name>
+        <servlet-class>com.procuregov.servlet.AuthServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AuthServlet</servlet-name>
+        <url-pattern>/auth</url-pattern>
+    </servlet-mapping>
+
+    <!-- ================= REGISTER ================= -->
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.procuregov.servlet.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+
+    <!-- ================= DASHBOARDS ================= -->
+    <servlet>
+        <servlet-name>OfficerDashboardServlet</servlet-name>
+        <servlet-class>com.procuregov.servlet.OfficerDashboardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OfficerDashboardServlet</servlet-name>
+        <url-pattern>/officer/dashboard</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SupplierDashboardServlet</servlet-name>
+        <servlet-class>com.procuregov.servlet.SupplierDashboardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SupplierDashboardServlet</servlet-name>
+        <url-pattern>/supplier/dashboard</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SupplierTenderServlet</servlet-name>
+        <servlet-class>com.procuregov.servlet.SupplierTenderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SupplierTenderServlet</servlet-name>
+        <url-pattern>/supplier/tender</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SupplierBidsServlet</servlet-name>
+        <servlet-class>com.procuregov.servlet.SupplierBidsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SupplierBidsServlet</servlet-name>
+        <url-pattern>/supplier/bids</url-pattern>
+    </servlet-mapping>
+    
+    <!-- ================= SUPPLIER AWARD NOTICES LIST ================= -->
+    <servlet>
+        <servlet-name>SupplierAwardNoticesListServlet</servlet-name>
+        <servlet-class>com.procuregov.servlet.SupplierAwardNoticesListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SupplierAwardNoticesListServlet</servlet-name>
+        <url-pattern>/supplier/award-notices</url-pattern>
+    </servlet-mapping>
+
+    <!-- ================= SUPPLIER AWARD NOTICE DETAIL ================= -->
+    <servlet>
+        <servlet-name>SupplierAwardNoticeServlet</servlet-name>
+        <servlet-class>com.procuregov.servlet.SupplierAwardNoticeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SupplierAwardNoticeServlet</servlet-name>
+        <url-pattern>/supplier/award-notice</url-pattern>
+    </servlet-mapping>
+    
+    <!-- ================= SUPPLIER ERROR PAGE ================= -->
+    <servlet>
+        <servlet-name>SupplierErrorServlet</servlet-name>
+        <jsp-file>/WEB-INF/jsp/supplier/error.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SupplierErrorServlet</servlet-name>
+        <url-pattern>/supplier/error</url-pattern>
+    </servlet-mapping>
+
+    <!-- ================= TENDER SERVLET ================= -->
+    <servlet>
+        <servlet-name>TenderServlet</servlet-name>
+        <servlet-class>com.procuregov.servlet.TenderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TenderServlet</servlet-name>
+        <url-pattern>/officer/tender</url-pattern>
+    </servlet-mapping>
+
+    <!-- ================= BID SERVLET ================= -->
+    <servlet>
+        <servlet-name>BidServlet</servlet-name>
+        <servlet-class>com.procuregov.servlet.BidServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BidServlet</servlet-name>
+        <url-pattern>/supplier/bid-submit</url-pattern>
+    </servlet-mapping>
+
+    <!-- ================= EVALUATOR DASHBOARD ================= -->
+    <servlet>
+        <servlet-name>EvaluatorDashboardServlet</servlet-name>
+        <servlet-class>com.procuregov.servlet.EvaluatorDashboardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EvaluatorDashboardServlet</servlet-name>
+        <url-pattern>/evaluator/dashboard</url-pattern>
+    </servlet-mapping>
+    <!-- ================= EVALUATION SERVLET ================= -->
+    <servlet>
+        <servlet-name>EvaluationServlet</servlet-name>
+        <servlet-class>com.procuregov.servlet.EvaluationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EvaluationServlet</servlet-name>
+        <url-pattern>/evaluation</url-pattern>
+    </servlet-mapping>
+
+    <!-- ================= AWARD ================= -->
+    <servlet>
+        <servlet-name>AwardServlet</servlet-name>
+        <servlet-class>com.procuregov.servlet.AwardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AwardServlet</servlet-name>
+        <url-pattern>/officer/award</url-pattern>
+    </servlet-mapping>
+    
+    <!-- ================= AWARDED TENDERS LIST ================= -->
+    <servlet>
+        <servlet-name>AwardedTendersListServlet</servlet-name>
+        <servlet-class>com.procuregov.servlet.AwardedTendersListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AwardedTendersListServlet</servlet-name>
+        <url-pattern>/officer/awarded-tenders</url-pattern>
+    </servlet-mapping>
+
+    <!-- ================= DOWNLOAD ================= -->
+    <servlet>
+        <servlet-name>FileDownloadServlet</servlet-name>
+        <servlet-class>com.procuregov.servlet.FileDownloadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FileDownloadServlet</servlet-name>
+        <url-pattern>/download</url-pattern>
+    </servlet-mapping>
+    
+    <!-- ================= EMAIL CONFIGURATION ================= -->
+    <context-param>
+        <param-name>mail.smtp.host</param-name>
+        <param-value>localhost</param-value>
+    </context-param>
+    <context-param>
+        <param-name>mail.smtp.port</param-name>
+        <param-value>2525</param-value>
+    </context-param>
+    <context-param>
+        <param-name>mail.username</param-name>
+        <param-value></param-value>
+    </context-param>
+    <context-param>
+        <param-name>mail.password</param-name>
+        <param-value></param-value>
+    </context-param>
+    
+    <servlet>
+        <servlet-name>EmailStatusServlet</servlet-name>
+        <servlet-class>com.procuregov.servlet.EmailStatusServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmailStatusServlet</servlet-name>
+        <url-pattern>/officer/email-status</url-pattern>
+    </servlet-mapping>
+    
+
+    <!-- ================= ERRORS ================= -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error/404.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error/500.jsp</location>
+    </error-page>
+
+    <!-- ================= WELCOME ================= -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>
